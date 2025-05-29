@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+/* Add your custom styles here */
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.about {
+  background-color: #1a1a2e;
+}
+
+.projects {
+  background-color: #16213e;
+}
+
+.contact {
+  background-color: #0f3460;
+}
+
+.container-contact {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+}
+
+.home .card {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+}

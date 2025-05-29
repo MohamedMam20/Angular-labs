@@ -1,0 +1,27 @@
+<section
+  class="min-vh-100 py-5 projects d-flex justify-content-center align-items-center text-white"
+>
+  <div class="container">
+    <h1 class="text-center mb-5">Projects</h1>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3" *ngFor="let project of projects">
+        <div class="card h-100">
+          <img
+            [src]="project.imageUrl"
+            class="card-img-top"
+            [alt]="project.title"
+          />
+          <div class="card-body text-center text-white">
+            <h5 class="card-title">{{ project.title }}</h5>
+            <a
+              [href]="project.link"
+              target="_blank"
+              class="btn btn-outline-primary"
+              >View Project</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
