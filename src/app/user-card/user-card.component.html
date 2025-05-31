@@ -1,0 +1,23 @@
+<app-search-user (reviceFromChild)="reviceFromChild($event)"></app-search-user>
+<div *ngIf="filterdUsers.length != 0; else noUsers">
+  <div class="row">
+    <div class="col-md-3 mb-4" *ngFor="let user of filterdUsers">
+      <div class="card">
+        <img [src]="user.url" class="card-img-top" alt="User avatar" />
+        <div class="card-body">
+          <h5 class="card-title">{{ user.name }}</h5>
+          <span>{{ user.email }}</span
+          ><br />
+          <span>{{ user.phone }}</span
+          ><br />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #noUsers>
+  <div class="text-center my-5">
+    <h4>No users found</h4>
+  </div>
+</ng-template>

@@ -1,0 +1,21 @@
+<div class="d-flex justify-content-center align-items-center my-5">
+  <div class="input-group" style="max-width: 600px; width: 100%">
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="searchTerm"
+      placeholder="Search user email ?"
+    />
+    <button class="btn btn-primary" type="button" (click)="sendToParent()">
+      Search
+    </button>
+    <button
+      class="btn btn-secondary"
+      type="button"
+      (click)="returnAll()"
+      *ngIf="showReturn"
+    >
+      Return
+    </button>
+  </div>
+</div>
