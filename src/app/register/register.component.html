@@ -1,0 +1,152 @@
+<div
+  class="container d-flex flex-column align-items-center justify-content-center py-5"
+>
+  <div class="w-100" style="max-width: 500px">
+    <div class="mb-4 text-center fw-bold fs-3">REGISTER</div>
+
+    <form
+      id="register-form"
+      autocomplete="off"
+      [formGroup]="registerForm"
+      (ngSubmit)="submitRegiserForm()"
+    >
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control no-radius my-0"
+          id="nameInput"
+          placeholder="Full Name"
+          required
+          name="userName"
+          formControlName="userName"
+        />
+        <label for="nameInput"
+          >Full Name <span class="text-danger">*</span></label
+        >
+        <div
+          id="userNameHelp"
+          class="form-text text-danger"
+          *ngIf="
+            registerForm.controls['userName'].touched &&
+            registerForm.controls['userName'].invalid
+          "
+        >
+          <span *ngIf="registerForm.controls['userName']?.errors?.['required']">
+            Full name is required.
+          </span>
+          <span
+            *ngIf="registerForm.controls['userName']?.errors?.['minlength']"
+          >
+            This field must be greater than 3 chars.
+          </span>
+        </div>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input
+          type="email"
+          class="form-control no-radius"
+          id="emailInput"
+          placeholder="email"
+          required
+          name="email"
+          formControlName="email"
+        />
+        <label for="emailInput">email <span class="text-danger">*</span></label>
+        <div
+          id="emailValidate"
+          *ngIf="
+            registerForm.controls['email'].touched &&
+            registerForm.controls['email'].invalid
+          "
+        >
+          <span
+            *ngIf="registerForm.controls['email']?.errors?.['required']"
+            class="text-danger"
+          >
+            email is required.
+          </span>
+          <span
+            *ngIf="registerForm.controls['email']?.errors?.['email']"
+            class="text-danger"
+          >
+            Enter a valid email
+          </span>
+        </div>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input
+          type="password"
+          class="form-control no-radius"
+          id="passwordInput"
+          placeholder="Password"
+          required
+          formControlName="password"
+        />
+        <label for="passwordInput"
+          >Password <span class="text-danger">*</span></label
+        >
+        <div
+          *ngIf="
+            registerForm.controls['password'].touched &&
+            registerForm.controls['password'].invalid
+          "
+        >
+          <span
+            class="text-danger"
+            *ngIf="registerForm.controls['password']?.errors?.['required']"
+            >Password is required.
+          </span>
+          <span
+            class="text-danger"
+            *ngIf="registerForm.controls['password']?.errors?.['minlength']"
+            >Password must be greater than 6 chars.
+          </span>
+        </div>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input
+          type="password"
+          class="form-control no-radius"
+          id="confirmPasswordInput"
+          placeholder="Confirm Password"
+          required
+          formControlName="confirmPassword"
+        />
+        <label for="confirmPasswordInput"
+          >Confirm Password <span class="text-danger">*</span></label
+        >
+        <div
+          class="text-danger"
+          *ngIf="
+            registerForm.hasError('passwordMismatch') &&
+            registerForm.get('confirmPassword')?.touched
+          "
+        >
+          Passwords do not match.
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-dark w-100 fw-bold no-radius p-2 my-2"
+        style="border-radius: 0"
+      >
+        Register
+      </button>
+
+      <div id="auth-message" class="alert alert-danger mt-3 d-none"></div>
+
+      <div class="text-center mt-4 text-muted">
+        Already have an account?
+        <a
+          routerLink="/app-login"
+          class="fw-bold text-dark text-decoration-none"
+          >Login here</a
+        >
+      </div>
+    </form>
+  </div>
+</div>

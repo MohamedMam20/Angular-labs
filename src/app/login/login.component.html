@@ -1,0 +1,58 @@
+<div
+  class="container d-flex flex-column align-items-center justify-content-center py-5"
+>
+  <div class="w-100" style="max-width: 400px">
+    <div class="mb-4 text-center fw-bold fs-3">LOGIN</div>
+
+    <form id="login-form" autocomplete="off">
+      <div class="form-floating mb-3">
+        <input
+          type="email"
+          class="form-control"
+          id="emailInputLog"
+          placeholder="Email"
+          required
+        />
+        <label for="emailInputLog"
+          >Email <span class="text-danger">*</span></label
+        >
+      </div>
+
+      <div class="form-floating mb-3">
+        <input
+          type="password"
+          class="form-control"
+          id="passwordInputLog"
+          placeholder="Password"
+          required
+        />
+        <label for="passwordInputLog"
+          >Password <span class="text-danger">*</span></label
+        >
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-dark w-100 fw-bold p-2 mt-2"
+        style="border-radius: 0"
+      >
+        Login
+      </button>
+
+      <div class="mt-2">
+        <a href="#" id="reset" class="text-decoration-none">Forgot Password?</a>
+      </div>
+
+      <div id="auth-message" class="alert alert-danger mt-3 d-none"></div>
+
+      <div class="text-center mt-4 text-muted">
+        Don't have an account?
+        <a
+          routerLink="/app-register"
+          class="fw-bold text-dark text-decoration-none"
+          >Register here</a
+        >
+      </div>
+    </form>
+  </div>
+</div>
