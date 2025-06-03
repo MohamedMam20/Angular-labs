@@ -19,3 +19,9 @@ Each branch in this repository represents a separate lab day, starting from **da
 - **day-3:** Users List — Angular lab  
   Click [here](https://github.com/MohamedMam20/Angular-labs/tree/lab3) to view the **day-3** branch on GitHub.
 
+
+- **day-4:** Products — Angular lab  
+  Click [here](https://github.com/MohamedMam20/Angular-labs/tree/lab4) to view the **day-4** branch on GitHub.
+
+
+
